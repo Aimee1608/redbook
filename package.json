@@ -1,0 +1,19 @@
+{
+  "name": "redbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bom.js",
+  "scripts": {
+    "flow": "flow",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-flow": "^7.16.0",
+    "flow-bin": "^0.163.0",
+    "nodemon": "^2.0.14"
+  }
+}

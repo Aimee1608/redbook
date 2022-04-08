@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>我是父页面</title>
+</head>
+
+<body>
+  我是父页面
+  <button id="send">发送消息</button>
+  <button id="open">新窗口</button>
+  <!-- <iframe id="child" src="./postMessage-child.html"></iframe> -->
+  <script>
+    const btn = document.getElementById("send")
+    window.addEventListener('message', function (event) {
+      console.log('父----页面收到消息', event.data)
+    })
+    btn.addEventListener('click', function () {
+      // const child = document.getElementById("child")
+      // child.contentWindow.postMessage('我是----父----页面', 'http://127.0.0.1:8080/postMessage-child.html')
+      newWindow && newWindow.postMessage('我是父页面--新开了个窗口发送的消息', '*')
+    })
+    let newWindow = null
+    document.getElementById('open').addEventListener('click', function () {
+      newWindow = window.open('http://127.0.0.1:8080/postMessage-child2.html')
+      // const arr = new newWindow.Array()
+      // console.log('newWindow', arr instanceof Array)
+
+    })
+  </script>
+</body>
+
+</html>

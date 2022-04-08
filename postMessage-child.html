@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>我是子页面</title>
+</head>
+
+<body>
+  我是子页面
+  <button id="send">发送消息</button>
+  <script>
+    const btn = document.getElementById("send")
+    window.addEventListener('message', function (event) {
+      console.log('子-----页面收到消息', event.data)
+    })
+    btn.addEventListener('click', function () {
+      parent.postMessage('我是---子---页面', 'http://127.0.0.1:8080/postMessage-parent.html')
+    })
+  </script>
+</body>
+
+</html>

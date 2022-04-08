@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>我是新窗口页面</title>
+</head>
+
+<body>
+  我是新窗口页面
+  <button id="send">发送消息</button>
+  <script>
+    const btn = document.getElementById("send")
+    window.addEventListener('message', function (event) {
+      console.log('新窗口-----页面收到消息', event.data)
+    })
+    btn.addEventListener('click', function () {
+      window.opener && window.opener.postMessage('我是---新窗口----页面', '*')
+    })
+  </script>
+</body>
+
+</html>
